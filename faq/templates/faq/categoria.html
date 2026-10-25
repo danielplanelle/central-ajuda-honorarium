@@ -1,16 +1,11 @@
 {% extends "faq/base.html" %}
 
 {% block titulo %}{{ categoria.nome }} | Central de Ajuda{% endblock %}
+{% block page_title %}{{ categoria.nome }}{% endblock %}
+{% block page_breadcrumb %}<span aria-current="page">{{ categoria.nome }}</span>{% endblock %}
 
 {% block conteudo %}
 <div class="page-content">
-    <nav class="breadcrumb" aria-label="Navegação estrutural">
-        <a href="{% url 'inicio' %}">Início</a>
-        <span aria-hidden="true">/</span>
-        <span aria-current="page">{{ categoria.nome }}</span>
-    </nav>
-
-    <h1 class="section-title">{{ categoria.nome }}</h1>
     {% if categoria.descricao %}
         <p class="category-description">{{ categoria.descricao }}</p>
     {% endif %}
