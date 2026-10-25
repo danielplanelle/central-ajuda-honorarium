@@ -209,7 +209,7 @@ main { flex: 1; }
     margin: 7px 25px 0 18px;
 }
 .page-toolbar-heading { display: flex; min-width: 0; align-items: center; gap: 14px; }
-.page-toolbar-heading h1 {
+.page-toolbar-heading .content-header-title {
     overflow: hidden;
     max-width: min(720px, 55vw);
     margin: 0;
@@ -392,7 +392,7 @@ main { flex: 1; }
     .support-link small { font-size: 9px; }
     .page-toolbar { align-items: flex-start; flex-direction: column; gap: 7px; margin: 10px 15px 0; }
     .page-toolbar-heading { gap: 9px; max-width: 100%; }
-    .page-toolbar-heading h1 { max-width: 58vw; font-size: 19px; }
+    .page-toolbar-heading .content-header-title { max-width: 58vw; font-size: 19px; }
     .page-toolbar-breadcrumb { gap: 6px; font-size: 12px; }
     .page-content { padding: 11px 12px 30px; }
     .page-heading h1 { font-size: 22px; }
