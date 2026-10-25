@@ -222,6 +222,7 @@ main { flex: 1; }
 }
 .article-card a { display: block; font-weight: 500; }
 .article-card a:hover { color: var(--green-dark); }
+.search-category { display: block; margin-top: 5px; color: var(--text-secondary); font-size: 13px; }
 .article-page { max-width: 1150px; }
 .article-document { padding: 27px 30px; }
 .article-heading { padding-bottom: 21px; border-bottom: 1px solid var(--border); }

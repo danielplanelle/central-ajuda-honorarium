@@ -1,0 +1,51 @@
+{% extends "faq/base.html" %}
+
+{% block titulo %}Resultados da busca | Central de Ajuda{% endblock %}
+
+{% block busca %}
+<form class="topbar-search" role="search" action="{% url 'busca' %}" method="get">
+    <input
+        type="search"
+        name="q"
+        value="{{ consulta }}"
+        placeholder="Busque por uma dúvida, por exemplo: desconto, checklist"
+        aria-label="Buscar na central de ajuda"
+    >
+    <button type="submit">Buscar</button>
+</form>
+{% endblock %}
+
+{% block conteudo %}
+<div class="page-content">
+    <nav class="breadcrumb" aria-label="Navegação estrutural">
+        <a href="{% url 'inicio' %}">Início</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Resultados da busca</span>
+    </nav>
+
+    <div class="page-heading">
+        <h1>Resultados da busca</h1>
+        {% if consulta %}
+            <p>Resultados para “{{ consulta }}”.</p>
+        {% else %}
+            <p>Digite uma dúvida ou palavra-chave para pesquisar.</p>
+        {% endif %}
+    </div>
+
+    {% if consulta %}
+        {% if resultados %}
+            <p class="article-count">{{ resultados|length }} resultado{{ resultados|length|pluralize }}</p>
+            <ul class="article-list">
+                {% for artigo in resultados %}
+                    <li class="article-card">
+                        <a href="{% url 'artigo' artigo.id %}">{{ artigo.pergunta }}</a>
+                        <span class="search-category">{{ artigo.categoria.nome }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="empty">Nenhum artigo encontrado para “{{ consulta }}”. Tente outros termos.</p>
+        {% endif %}
+    {% endif %}
+</div>
+{% endblock %}

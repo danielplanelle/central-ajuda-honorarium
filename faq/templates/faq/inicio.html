@@ -1,10 +1,11 @@
 {% extends "faq/base.html" %}
 
 {% block busca %}
-<form class="topbar-search" role="search" action="{% url 'inicio' %}" method="get">
+<form class="topbar-search" role="search" action="{% url 'busca' %}" method="get">
     <input
         type="search"
         name="q"
+        value="{{ consulta }}"
         placeholder="Busque por uma dúvida, por exemplo: desconto, checklist"
         aria-label="Buscar na central de ajuda"
     >

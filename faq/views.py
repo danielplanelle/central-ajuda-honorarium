@@ -1,8 +1,19 @@
+import unicodedata
+
 from django.db.models import Count, Q
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404, render
 
 from .models import Artigo, Categoria
+
+
+def normalizar_busca(texto):
+    texto = unicodedata.normalize("NFD", texto).casefold()
+    return "".join(
+        caractere
+        for caractere in texto
+        if not unicodedata.combining(caractere)
+    )
 
 
 def inicio(request):
@@ -32,6 +43,38 @@ def inicio(request):
         request,
         "faq/inicio.html",
         {"categorias": categorias, "destaques": destaques},
+    )
+
+
+def busca(request):
+    consulta = request.GET.get("q", "").strip()
+    termos = normalizar_busca(consulta).split()
+    resultados = []
+
+    if termos:
+        artigos = Artigo.objects.filter(
+            status=Artigo.Status.PUBLICADO,
+            categoria__ativa=True,
+        ).select_related("categoria").order_by("pergunta")
+
+        for artigo in artigos:
+            texto = " ".join(
+                (
+                    artigo.pergunta,
+                    artigo.resposta,
+                    artigo.palavras_chave,
+                    artigo.passo_a_passo,
+                    artigo.categoria.nome,
+                )
+            )
+            texto_normalizado = normalizar_busca(texto)
+            if all(termo in texto_normalizado for termo in termos):
+                resultados.append(artigo)
+
+    return render(
+        request,
+        "faq/busca.html",
+        {"consulta": consulta, "resultados": resultados},
     )
 
 
