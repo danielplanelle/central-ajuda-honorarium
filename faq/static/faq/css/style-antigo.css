@@ -1,0 +1,638 @@
+/* ==========================================
+   1. RESET E CONFIGURAÇÕES GERAIS
+   ========================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --sidebar-bg: #2c2d2f;
+    --sidebar-text: #d4d4d6;
+    --sidebar-muted: #85868a;
+    --green: #42b878;
+    --green-dark: #319a60;
+    --page-bg: #f4f5f7;
+    --card-bg: #ffffff;
+    --text-primary: #34343f;
+    --text-secondary: #777985;
+    --border: #e6e7eb;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--page-bg);
+    color: var(--text-primary);
+    font-size: 14px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ==========================================
+   2. ESTRUTURA PRINCIPAL
+   ========================================== */
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+
+/* ==========================================
+   3. MENU LATERAL
+   ========================================== */
+
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    min-height: 100vh;
+    background: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-brand {
+    height: 76px;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brand-symbol {
+    color: var(--green);
+    font-size: 29px;
+    line-height: 1;
+}
+
+.brand-name {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.sidebar-divider {
+    height: 14px;
+}
+
+.sidebar-nav {
+    padding: 8px 12px;
+}
+
+.nav-item {
+    min-height: 40px;
+    padding: 10px 12px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: var(--sidebar-text);
+    font-size: 13px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.07);
+    color: #ffffff;
+}
+
+.nav-item.active {
+    background: rgba(66, 184, 120, 0.13);
+    color: #73d39b;
+}
+
+.nav-icon {
+    width: 18px;
+    text-align: center;
+    font-size: 17px;
+}
+
+.nav-section-title {
+    margin: 28px 12px 12px;
+    color: var(--sidebar-muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding: 20px 24px;
+    color: var(--sidebar-muted);
+    font-size: 11px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* ==========================================
+   4. ÁREA PRINCIPAL E BARRA SUPERIOR
+   ========================================== */
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.topbar {
+    min-height: 68px;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border);
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.breadcrumb-home {
+    color: var(--green);
+    font-size: 20px;
+}
+
+.topbar-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+}
+
+.support-label {
+    color: var(--green-dark);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.support-name {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+
+/* ==========================================
+   5. CONTEÚDO DA PÁGINA
+   ========================================== */
+
+.page-content {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.page-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 26px;
+}
+
+.page-heading h1 {
+    margin: 0 0 8px;
+    color: var(--text-primary);
+    font-size: 27px;
+    font-weight: 600;
+    letter-spacing: -0.7px;
+}
+
+.page-heading p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   6. PESQUISA
+   ========================================== */
+
+.search-panel {
+    padding: 22px 24px;
+    margin-bottom: 30px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    box-shadow: 0 2px 7px rgba(30, 35, 50, 0.035);
+}
+
+.search-panel label {
+    display: block;
+    margin-bottom: 13px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.search-panel .form-control {
+    width: 100%;
+    min-height: 44px;
+    border: 1px solid #dfe1e6;
+    border-radius: 6px;
+    padding: 10px 14px;
+    color: var(--text-primary);
+    font-size: 13px;
+    background: #ffffff;
+    box-shadow: none;
+}
+
+.search-panel .form-control:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(66, 184, 120, 0.12);
+    outline: none;
+}
+
+
+/* ==========================================
+   7. TÍTULOS DE SEÇÃO
+   ========================================== */
+
+.categories-section,
+.faq-section {
+    margin-bottom: 32px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 17px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   8. CARTÕES DE CATEGORIA
+   ========================================== */
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.category-card {
+    min-height: 125px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    box-shadow: 0 2px 7px rgba(30, 35, 50, 0.035);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 16px rgba(30, 35, 50, 0.08);
+}
+
+.category-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 7px;
+    background: #e9f8ef;
+    color: var(--green-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+}
+
+.category-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.category-info h3 {
+    margin: 1px 0 8px;
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.category-info p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.category-arrow {
+    color: #a0a2aa;
+    font-size: 23px;
+}
+
+
+/* ==========================================
+   9. PERGUNTAS FREQUENTES
+   ========================================== */
+
+.faq-category {
+    margin-bottom: 25px;
+    scroll-margin-top: 20px;
+}
+
+.faq-category-title {
+    margin: 0 0 14px;
+    padding-left: 12px;
+    border-left: 3px solid var(--green);
+    color: var(--text-primary);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.article-card {
+    padding: 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    box-shadow: 0 2px 7px rgba(30, 35, 50, 0.035);
+}
+
+.article-card h4 {
+    margin: 0 0 12px;
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.article-card > p {
+    margin: 0 0 12px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.empty-category {
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+/* ==========================================
+   10. PASSO A PASSO
+   ========================================== */
+
+.article-steps {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Etapas compactas, separadas por linhas */
+.step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 7px 4px;
+    border-bottom: 1px solid #e9ebee;
+}
+
+.step-item:first-child {
+    padding-top: 5px;
+}
+
+.step-item:last-child {
+    border-bottom: none;
+    padding-bottom: 2px;
+}
+
+/* Número em pequeno quadrado arredondado */
+.step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    background: #e3f5e9;
+    color: #21864e;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* Área de título e descrição */
+.step-content {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Título da etapa */
+.step-title {
+    margin: 0 0 2px;
+    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* Descrição completa */
+.step-description {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+
+/* ==========================================
+   AJUSTES PARA CELULARES
+   ========================================== */
+
+@media (max-width: 700px) {
+    .step-item {
+        gap: 7px;
+        padding: 6px 0;
+    }
+
+    .step-number {
+        flex-basis: 20px;
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+    }
+
+    .step-title {
+        font-size: 13px;
+    }
+
+    .step-description {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+}
+
+
+/* ==========================================
+   11. VÍDEOS
+   ========================================== */
+
+.article-video {
+    margin-top: 16px;
+}
+
+.article-video video {
+    display: block;
+    width: 100%;
+    max-height: 360px;
+    border-radius: 6px;
+    background: #111111;
+}
+
+
+/* ==========================================
+   12. RODAPÉ
+   ========================================== */
+
+.page-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 22px 0 5px;
+    margin-top: 30px;
+    border-top: 1px solid #e0e2e7;
+    color: #999ba3;
+    font-size: 11px;
+}
+
+
+/* ==========================================
+   13. RESPONSIVIDADE
+   ========================================== */
+
+@media (max-width: 1100px) {
+    .sidebar {
+        width: 220px;
+        min-width: 220px;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .articles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-content {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 700px) {
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 0;
+        min-height: auto;
+    }
+
+    .sidebar-brand {
+        height: 64px;
+    }
+
+    .sidebar-nav {
+        padding: 8px 12px 14px;
+    }
+
+    .nav-section-title {
+        margin-top: 16px;
+    }
+
+    .sidebar-footer {
+        display: none;
+    }
+
+    .topbar {
+        min-height: 58px;
+        padding: 0 18px;
+    }
+
+    .page-content {
+        padding: 20px 16px;
+    }
+
+    .page-heading h1 {
+        font-size: 23px;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .articles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search-panel {
+        padding: 18px;
+    }
+
+    .page-footer {
+        flex-direction: column;
+    }
+
+    .step-item {
+        gap: 9px;
+        padding: 8px 0;
+    }
+
+    .step-number {
+        flex-basis: 26px;
+        width: 26px;
+        height: 26px;
+        font-size: 10px;
+    }
+
+    .step-title {
+        font-size: 13px;
+    }
+
+    .step-description {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+}

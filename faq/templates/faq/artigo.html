@@ -1,0 +1,66 @@
+{% extends "faq/base.html" %}
+{% load faq_extras %}
+
+{% block titulo %}{{ artigo.pergunta }} | Central de Ajuda{% endblock %}
+
+{% block conteudo %}
+<div class="page-content article-page">
+    <nav class="breadcrumb" aria-label="Navegação estrutural">
+        <a href="{% url 'inicio' %}">Início</a>
+        <span aria-hidden="true">/</span>
+        <a href="{% url 'categoria' artigo.categoria.id %}">{{ artigo.categoria.nome }}</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Artigo</span>
+    </nav>
+
+    <article class="section-card article-document">
+        <header class="article-heading">
+            <a class="article-category" href="{% url 'categoria' artigo.categoria.id %}">
+                {{ artigo.categoria.nome }}
+            </a>
+            <h1>{{ artigo.pergunta }}</h1>
+        </header>
+
+        <section class="article-section">
+            <h2>Resposta</h2>
+            <div class="article-answer">{{ artigo.resposta|linebreaks }}</div>
+        </section>
+
+        {% with etapas=artigo.passo_a_passo|separar_etapas %}
+            {% if etapas %}
+                <section class="article-section">
+                    <h2>Passo a passo</h2>
+                    <ol class="steps-list">
+                        {% for etapa in etapas %}
+                            <li>{{ etapa }}</li>
+                        {% endfor %}
+                    </ol>
+                </section>
+            {% endif %}
+        {% endwith %}
+
+        {% if artigo.video %}
+            <section class="article-section">
+                <h2>Vídeo explicativo</h2>
+                <video class="article-video" controls preload="metadata">
+                    <source src="{{ artigo.video.url }}">
+                    Seu navegador não conseguiu reproduzir este vídeo.
+                </video>
+            </section>
+        {% endif %}
+    </article>
+
+    {% if relacionados %}
+        <section class="related-section">
+            <h2 class="section-title">Artigos relacionados</h2>
+            <ul class="article-list">
+                {% for relacionado in relacionados %}
+                    <li class="article-card">
+                        <a href="{% url 'artigo' relacionado.id %}">{{ relacionado.pergunta }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,203 @@
+"""Conteúdo inicial da Central de Ajuda (baseado nos documentos do Painel de Propostas)."""
+
+CATEGORIAS = {
+    "Dados de envio": "Contratante, contatos e origem do cliente.",
+    "Checklist": "Perguntas que definem os valores da proposta.",
+    "Itens, pacotes e serviços": "Template, pacotes, serviços adicionais e bonificações.",
+    "Pagamento e envio": "Cobrança, validade e envio da proposta.",
+}
+
+# (categoria, pergunta, resposta, passos, palavras_chave)
+ARTIGOS = [
+    (
+        "Dados de envio",
+        "Como vinculo o contratante e defino quem recebe a proposta?",
+        "A seção Dados de Envio vincula o contratante e define os contatos que recebem a proposta. Depois que a pessoa é criada, os campos em cinza são preenchidos automaticamente.",
+        [
+            "No campo “Pessoa” (obrigatório), selecione o contato vinculado à empresa contratante.",
+            "Se ele ainda não existir, clique no botão “+” para fazer o cadastro facilitado.",
+            "Em “E-mails em Cópia (CC)”, digite um endereço e clique em “Adicionar”. Você pode incluir mais de um.",
+        ],
+        "contratante, pessoa, destinatário, cópia, cc, e-mail, dados de envio",
+    ),
+    (
+        "Dados de envio",
+        "Como cadastro uma nova pessoa responsável?",
+        "No campo “Pessoa”, o botão “+” abre a tela “Criar Pessoa Responsável”. Para corrigir dados depois, use o ícone de lápis (“Editar pessoa”).",
+        [
+            "Informe o nome completo (obrigatório).",
+            "Informe um e-mail válido (obrigatório).",
+            "Se quiser, informe o celular com DDD.",
+            "Em “Como chegou à Contabilidade?” (obrigatório), escolha Indicação, Facebook, Instagram, Google ou Outros.",
+            "Clique em “Criar Pessoa”.",
+        ],
+        "pessoa, responsável, cadastro, novo contato, criar pessoa, editar pessoa",
+    ),
+    (
+        "Dados de envio",
+        "Como registro quem indicou o cliente?",
+        "Em “Como chegou à Contabilidade?”, a opção “Indicação” pede quem indicou o cliente. Facebook, Instagram e Google exigem apenas a seleção da opção, e em “Outros” você pode complementar em um campo opcional.",
+        [
+            "Escolha “Indicação” em “Como chegou à Contabilidade?”.",
+            "Selecione o nome no campo “Quem fez a indicação?”.",
+            "Se a pessoa não estiver cadastrada, clique em “+” para abrir o “Cadastro rápido de indicação”.",
+            "Informe o nome (obrigatório). Celular, telefone, e-mail e observação são opcionais.",
+            "Clique em “Salvar indicação”.",
+        ],
+        "indicação, origem, como chegou, indicou, cadastro rápido",
+    ),
+    (
+        "Dados de envio",
+        "Como informo o contratante em uma proposta de Serviços Eventuais?",
+        "Em Serviços Eventuais, o contratante responsável pelo financeiro é informado por empresa ou, se for pessoa física, sem empresa. Essas opções só ficam disponíveis depois de selecionar ou criar a pessoa de contato.",
+        [
+            "No campo “Informe o contratante responsável para o financeiro”, digite o CNPJ ou o nome da empresa e selecione-a na lista.",
+            "Se a empresa não estiver cadastrada, clique em “+” e informe o CNPJ.",
+            "Clique em “Buscar dados do CNPJ” e preencha a razão social (obrigatória).",
+            "Clique em “Criar empresa”.",
+            "Se o contratante for pessoa física, marque “Sem Empresa Cadastrada”.",
+        ],
+        "serviços eventuais, contratante, cnpj, pessoa física, empresa, financeiro",
+    ),
+    (
+        "Checklist",
+        "Quem pode responder o checklist: eu ou o meu cliente?",
+        "Você escolhe: quem elabora a proposta preenche o checklist na própria tela, ou o cliente responde por e-mail.",
+        [
+            "Na seção Checklist, escolha “O Responsável irá responder o checklist” para preencher você mesmo.",
+            "Ou escolha “A Pessoa (Cliente) irá responder o checklist”.",
+            "Neste caso, clique em “Enviar Checklist”. O cliente recebe um e-mail no endereço informado em Dados de Envio.",
+        ],
+        "checklist, responder, enviar checklist, cliente, responsável",
+    ),
+    (
+        "Checklist",
+        "Quais informações preencho no checklist?",
+        "Depois de escolher o tipo (Filial ou Matriz), a tributação e a atividade preponderante, o sistema mostra as perguntas do checklist. A coluna “VALOR” mostra os valores calculados pelo sistema, e o total aparece no final da tabela. As perguntas e os valores podem ser editados conforme a sua necessidade.",
+        [
+            "Informe a expectativa de faturamento.",
+            "Informe a quantidade de colaboradores, de pró-labores e de Inscrições Estaduais Substituta/DIFAL.",
+            "Informe a quantidade mensal de documentos fiscais de entrada e saída e de lançamentos contábeis.",
+            "Indique se o sistema financeiro/ERP do cliente é integrado e quantas instituições financeiras ele usa.",
+            "Indique se há processamento fiscal/contábil externo.",
+        ],
+        "checklist, faturamento, colaboradores, pró-labore, documentos fiscais, lançamentos, valor, precificação",
+    ),
+    (
+        "Checklist",
+        "Como o meu cliente responde o checklist e como sei que terminou?",
+        "O cliente responde pelo Portal de Propostas, e você acompanha o andamento pelo card da proposta no Painel de Propostas.",
+        [
+            "O cliente clica em “Responder checklist” no e-mail e entra no Portal de Propostas.",
+            "Ele abre “Checklist”, preenche as perguntas e clica em “Enviar checklist para o gerente”.",
+            "Você recebe um e-mail, e no Painel de Propostas o card mostra a tag verde “Checklist respondido”.",
+            "Abra o card, confira as respostas e clique em “Avançar”.",
+            "A proposta passa para “Pendente envio”, com a tag amarela “Proposta não enviada”.",
+        ],
+        "checklist respondido, portal de propostas, avançar, pendente envio, card",
+    ),
+    (
+        "Checklist",
+        "O que muda no checklist de Empresa em Transferência?",
+        "Na Empresa em Transferência, o checklist pede também o CNPJ que será transferido. O restante segue igual ao checklist de Constituição.",
+        [
+            "Informe o CNPJ que será transferido (obrigatório). Se necessário, adicione outros CNPJs da empresa.",
+            "O campo “Qual o tipo?” (Filial ou Matriz) é preenchido automaticamente a partir do CNPJ.",
+            "Selecione a tributação e a atividade preponderante.",
+            "Preencha as demais perguntas como no checklist de Constituição.",
+        ],
+        "transferência, cnpj, matriz, filial, checklist",
+    ),
+    (
+        "Itens, pacotes e serviços",
+        "Como escolho o template e defino se a proposta gera contrato?",
+        "Na seção Itens da Proposta você escolhe o template e define se a proposta gera contrato. O campo “Tipo de Acréscimo/Desconto” não é editável.",
+        [
+            "Clique em “Template de Proposta” (seleção obrigatória) e escolha uma das opções.",
+            "Em “Gera Contrato”, indique se a proposta vai ou não gerar contrato.",
+        ],
+        "template, gera contrato, itens da proposta, contrato",
+    ),
+    (
+        "Itens, pacotes e serviços",
+        "Como ajusto acréscimo e desconto no pacote de serviços?",
+        "Na seção Pacotes de Serviços você pode ajustar o acréscimo e o desconto do pacote.",
+        [
+            "O Pacote Básico já vem com os serviços vinculados.",
+            "Em “Incluir no contrato”, escolha se o pacote entra ou não no contrato.",
+            "Confira Valor e Subtotal, preenchidos automaticamente.",
+            "Se precisar, digite manualmente o acréscimo ou o desconto.",
+        ],
+        "pacote, pacote básico, acréscimo, desconto, subtotal, valor",
+    ),
+    (
+        "Itens, pacotes e serviços",
+        "Como incluo um serviço adicional na proposta?",
+        "Se você não clicar em Salvar, o serviço não é contabilizado na proposta. Depois de salvar, aparecem as ações Editar, Remover, Adicionar (inclui uma nova linha) e Complemento (informação extra do serviço).",
+        [
+            "Em Serviços adicionais, abra o campo “Serviços” e escolha o serviço.",
+            "Indique se ele entra no contrato.",
+            "Ajuste acréscimo e desconto, se necessário.",
+            "Clique em “Salvar” na coluna Ações.",
+        ],
+        "serviço adicional, adicionar serviço, salvar, complemento",
+    ),
+    (
+        "Itens, pacotes e serviços",
+        "Como bonifico um serviço?",
+        "Sem clicar em Salvar, o serviço bonificado não é contabilizado na proposta.",
+        [
+            "Em Serviços bonificados, abra o campo “Bonificação”.",
+            "Escolha, entre os serviços adicionais da proposta, o que será bonificado.",
+            "Indique se ele entra no contrato e confira os valores.",
+            "Clique no ícone de salvar.",
+        ],
+        "bonificar, bonificação, brinde, serviço bonificado, grátis",
+    ),
+    (
+        "Pagamento e envio",
+        "Como defino as condições de pagamento dos serviços recorrentes?",
+        "A seção Condições de Pagamento define como e quando os serviços recorrentes serão cobrados.",
+        [
+            "Escolha o meio de pagamento: Boleto, Cartão de Crédito ou PIX.",
+            "Defina o dia de vencimento e a data da primeira cobrança.",
+            "Em empresa em constituição, se quiser, marque “Início cobrança pós constituir CNPJ” e informe em “Dias cobrar após CNPJ” quando a cobrança começa.",
+            "Se houver desconto para pagamento em dia, ative essa opção e informe o valor.",
+        ],
+        "pagamento, boleto, cartão, pix, vencimento, primeira cobrança, recorrente, mensalidade",
+    ),
+    (
+        "Pagamento e envio",
+        "Como parcelo os serviços não recorrentes?",
+        "A seção “Serviços não recorrentes” só aparece se a proposta tiver serviços adicionais. O campo “Parcelamento do cliente” não é editável: ele é preenchido quando o cliente aprova a proposta e escolhe o parcelamento.",
+        [
+            "Ative “Parcelado”.",
+            "Escolha o meio de pagamento e o dia de vencimento.",
+            "Defina a data da primeira cobrança.",
+            "Informe o máximo de parcelas.",
+        ],
+        "parcelar, parcelas, parcelamento, não recorrente, serviço avulso",
+    ),
+    (
+        "Pagamento e envio",
+        "Como defino a validade da proposta e quando devo falar de novo com o cliente?",
+        "Os dois prazos são obrigatórios, e as datas correspondentes são preenchidas sozinhas quando você envia a proposta.",
+        [
+            "Em Condições Gerais, escolha o “Prazo de Validade”.",
+            "Escolha o “Prazo do Próximo Contato” (follow-up).",
+            "Em “Observações para a Pessoa”, use as tags automáticas, se quiser: nome da pessoa, prazo, data de validade, data de vencimento e data de envio da proposta.",
+        ],
+        "validade, prazo, follow-up, próximo contato, observações, condições gerais",
+    ),
+    (
+        "Pagamento e envio",
+        "Qual a diferença entre Salvar e Fechar, Salvar e Cancelar? Como envio a proposta?",
+        "Atenção: tudo o que foi preenchido é perdido ao clicar em Cancelar.",
+        [
+            "“Salvar e Fechar” salva e pergunta se você quer enviar. “Sim” envia ao contato informado, e “Não” fecha para você continuar depois.",
+            "“Salvar” salva e mantém você na tela. Depois aparece o botão “Enviar Proposta”.",
+            "“Cancelar” fecha a tela e exclui a proposta.",
+        ],
+        "enviar proposta, salvar, salvar e fechar, cancelar, finalizar",
+    ),
+]

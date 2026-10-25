@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}Central de Ajuda | Honorarium{% endblock %}</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="{% static 'faq/css/style.css' %}">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <a href="{% url 'inicio' %}" class="brand">
+                <img
+                    class="brand-logo"
+                    src="{% static 'faq/img/logo-simbolo.png' %}"
+                    alt=""
+                    width="40"
+                    height="40"
+                >
+                <span class="brand-name">Honorarium</span>
+            </a>
+
+            <span class="sidebar-label">Principal</span>
+            <nav class="side-nav" aria-label="Principal">
+                <a href="{% url 'inicio' %}" class="active">
+                    <span class="nav-icon" aria-hidden="true">⌂</span>
+                    <span>Central de Ajuda</span>
+                </a>
+            </nav>
+            <div class="sidebar-bottom">
+                <nav class="side-nav" aria-label="Equipe">
+                    <a href="{% url 'admin:index' %}">
+                        <span class="nav-icon" aria-hidden="true">⚙</span>
+                        <span>Área da equipe</span>
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <div class="workspace">
+            <header class="topbar">
+                <div class="topbar-context"><strong>Honorarium</strong> &nbsp;/&nbsp; Central de Ajuda</div>
+                {% block busca %}{% endblock %}
+            </header>
+
+            <main>
+                {% block conteudo %}{% endblock %}
+            </main>
+
+            <footer class="site-footer">Honorarium · Central de Ajuda</footer>
+        </div>
+    </div>
+</body>
+</html>
