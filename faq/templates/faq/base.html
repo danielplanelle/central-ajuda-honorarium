@@ -26,27 +26,73 @@
                 <span class="brand-name">Honorarium</span>
             </a>
 
-            <span class="sidebar-label">Principal</span>
-            <nav class="side-nav" aria-label="Principal">
-                <a href="{% url 'inicio' %}" class="active">
-                    <span class="nav-icon" aria-hidden="true">⌂</span>
-                    <span>Central de Ajuda</span>
-                </a>
-            </nav>
-            <div class="sidebar-bottom">
-                <nav class="side-nav" aria-label="Equipe">
-                    <a href="{% url 'admin:index' %}">
-                        <span class="nav-icon" aria-hidden="true">⚙</span>
-                        <span>Área da equipe</span>
-                    </a>
-                </nav>
+            <div class="sidebar-toggle" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
             </div>
+
+            <nav class="portal-nav" aria-label="Menu do portal Honorarium">
+                <div class="side-nav portal-main-nav" aria-label="Principal">
+                    <span class="side-link">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3h6v1M9 9h6M9 13h6"/></svg>
+                        <span>Painel de Propostas</span>
+                    </span>
+                    <span class="side-link">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v5h5M9 12h6M9 16h6"/></svg>
+                        <span>Painel de Contratos</span>
+                    </span>
+                    <span class="side-link">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 7 3v5c0 4.5-2.8 7.8-7 10-4.2-2.2-7-5.5-7-10V6z"/><path d="M9.5 12.5 11 14l3.5-4"/></svg>
+                        <span>Painel de Honorários</span>
+                    </span>
+                    <span class="side-link">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="12" rx="1.5"/><path d="M8 8V5h8v3M3 12h18M9 12v8M15 12v8"/></svg>
+                        <span>Empresas</span>
+                    </span>
+                    <span class="side-link">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/></svg>
+                        <span>Pessoas</span>
+                    </span>
+                    <span class="side-link">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="2.2"/><circle cx="6" cy="12" r="2.2"/><circle cx="18" cy="19" r="2.2"/><path d="m8 11 8-5M8 13l8 5"/></svg>
+                        <span>Indicações</span>
+                    </span>
+                </div>
+
+                <div class="sidebar-divider"></div>
+                <span class="sidebar-label">Administração</span>
+
+                <div class="side-nav portal-admin-nav" aria-label="Administração">
+                    <span class="side-link">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 6.5 3-3a4 4 0 0 1-5 5l-7.7 7.7a2.1 2.1 0 0 0 3 3l7.7-7.7a4 4 0 0 0 5-5l-3 3z"/></svg>
+                        <span>Serviços</span><span class="side-chevron" aria-hidden="true">›</span>
+                    </span>
+                    <span class="side-link">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0M16 5.5a3 3 0 0 1 0 5.8M17 14a5 5 0 0 1 3.5 4.8"/></svg>
+                        <span>Organização</span><span class="side-chevron" aria-hidden="true">›</span>
+                    </span>
+                    <span class="side-link">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><path d="M8 4v4M15 10v4M10 16v4"/></svg>
+                        <span>Configurações</span><span class="side-chevron" aria-hidden="true">›</span>
+                    </span>
+                    <span class="side-link">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="m19.4 15 .1.1 1.1.9-1.5 2.6-1.4-.6a7.5 7.5 0 0 1-1.5.9l-.3 1.5h-3l-.3-1.5a7.5 7.5 0 0 1-1.5-.9l-1.4.6-1.5-2.6 1.1-.9a7.5 7.5 0 0 1 0-1.8l-1.1-.9 1.5-2.6 1.4.6a7.5 7.5 0 0 1 1.5-.9l.3-1.5h3l.3 1.5a7.5 7.5 0 0 1 1.5.9l1.4-.6 1.5 2.6-1.1.9a7.5 7.5 0 0 1-.1 1.7z"/></svg>
+                        <span>Sistema</span><span class="side-chevron" aria-hidden="true">›</span>
+                    </span>
+                    <a href="{% url 'inicio' %}" class="side-link side-link-help active">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.6 9a2.5 2.5 0 1 1 4.3 1.8c-1.2 1-1.9 1.4-1.9 2.7M12 17h.01"/></svg>
+                        <span>Central de Ajuda</span>
+                    </a>
+                </div>
+            </nav>
         </aside>
 
         <div class="workspace">
             <header class="topbar">
                 <div class="topbar-context"><strong>Honorarium</strong> &nbsp;/&nbsp; Central de Ajuda</div>
-                {% block busca %}{% endblock %}
+                <div class="topbar-actions">
+                    {% block busca %}{% endblock %}
+                    <a href="{% url 'admin:index' %}" class="team-link">Área da equipe</a>
+                </div>
             </header>
 
             <main>
