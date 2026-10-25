@@ -19,6 +19,21 @@
         <p>Encontre o passo a passo para usar o Painel de Propostas.</p>
     </div>
 
+    {% if destaques %}
+        <section class="section-card featured-section" aria-labelledby="featured-title">
+            <h2 class="section-title" id="featured-title">Destaques</h2>
+            <div class="featured-grid">
+                {% for artigo in destaques %}
+                    <a class="featured-card" href="{% url 'artigo' artigo.id %}">
+                        <span class="featured-category">{{ artigo.categoria.nome }}</span>
+                        <strong>{{ artigo.pergunta }}</strong>
+                        <span class="featured-link">Ver resposta <span aria-hidden="true">→</span></span>
+                    </a>
+                {% endfor %}
+            </div>
+        </section>
+    {% endif %}
+
     <section class="section-card">
         <h2 class="section-title">Pesquise por categoria</h2>
 

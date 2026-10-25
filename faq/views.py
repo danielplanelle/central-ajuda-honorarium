@@ -19,7 +19,20 @@ def inicio(request):
         .filter(total__gt=0)
         .order_by("nome")
     )
-    return render(request, "faq/inicio.html", {"categorias": categorias})
+    destaques = (
+        Artigo.objects.filter(
+            status=Artigo.Status.PUBLICADO,
+            destaque=True,
+            categoria__ativa=True,
+        )
+        .select_related("categoria")
+        .order_by("pergunta")[:4]
+    )
+    return render(
+        request,
+        "faq/inicio.html",
+        {"categorias": categorias, "destaques": destaques},
+    )
 
 
 def categoria(request, categoria_id):

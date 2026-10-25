@@ -13,9 +13,11 @@ class CategoriaAdmin(admin.ModelAdmin):
 
 @admin.register(Artigo)
 class ArtigoAdmin(admin.ModelAdmin):
-    list_display = ("pergunta", "categoria", "status", "autor", "atualizado_em")
+    list_display = (
+        "pergunta", "categoria", "destaque", "status", "autor", "atualizado_em"
+    )
     search_fields = ("pergunta", "resposta", "palavras_chave")
-    list_filter = ("status", "categoria")
+    list_filter = ("status", "destaque", "categoria")
     ordering = ("pergunta",)
     readonly_fields = ("autor",)
     actions = ["publicar_selecionados", "voltar_para_validacao"]

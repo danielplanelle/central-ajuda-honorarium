@@ -20,6 +20,7 @@ class Artigo(models.Model):
     resposta = models.TextField()
     passo_a_passo = models.TextField(blank=True)
     palavras_chave = models.CharField(max_length=300, blank=True)
+    destaque = models.BooleanField(default=False, verbose_name="Destaque")
     video = models.FileField(
         upload_to="videos/",
         blank=True,
