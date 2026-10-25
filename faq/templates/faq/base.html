@@ -70,12 +70,20 @@
                         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0M16 5.5a3 3 0 0 1 0 5.8M17 14a5 5 0 0 1 3.5 4.8"/></svg>
                         <span>Organização</span><span class="side-chevron" aria-hidden="true">›</span>
                     </span>
-                    <details class="side-menu-group" open>
-                        <summary class="side-link side-menu-trigger">
+                    <span class="side-link">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><path d="M8 4v4M15 10v4M10 16v4"/></svg>
-                            <span>Configurações</span><span class="side-chevron" aria-hidden="true">›</span>
+                        <span>Configurações</span><span class="side-chevron" aria-hidden="true">›</span>
+                    </span>
+                    <span class="side-link">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="m19.4 15 .1.1 1.1.9-1.5 2.6-1.4-.6a7.5 7.5 0 0 1-1.5.9l-.3 1.5h-3l-.3-1.5a7.5 7.5 0 0 1-1.5-.9l-1.4.6-1.5-2.6 1.1-.9a7.5 7.5 0 0 1 0-1.8l-1.1-.9 1.5-2.6 1.4.6a7.5 7.5 0 0 1 1.5-.9l.3-1.5h3l.3 1.5a7.5 7.5 0 0 1 1.5.9l1.4-.6 1.5 2.6-1.1.9a7.5 7.5 0 0 1-.1 1.7z"/></svg>
+                        <span>Sistema</span><span class="side-chevron" aria-hidden="true">›</span>
+                    </span>
+                    <details class="side-menu-group" open>
+                        <summary class="side-link side-menu-trigger side-link-help active">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.6 9a2.5 2.5 0 1 1 4.3 1.8c-1.2 1-1.9 1.4-1.9 2.7M12 17h.01"/></svg>
+                            <span>Central de Ajuda</span><span class="side-chevron" aria-hidden="true">›</span>
                         </summary>
-                        <div class="side-submenu" aria-label="Categorias">
+                        <div class="side-submenu" aria-label="Categorias da Central de Ajuda">
                             {% for item in categorias_navegacao %}
                                 <a href="{% url 'categoria' item.id %}" class="side-link side-sub-link{% if categoria.id == item.id %} active{% endif %}">
                                     <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="6" width="10" height="12" rx="2"/><path d="M10 9h4M10 12h4"/></svg>
@@ -86,14 +94,6 @@
                             {% endfor %}
                         </div>
                     </details>
-                    <span class="side-link">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="m19.4 15 .1.1 1.1.9-1.5 2.6-1.4-.6a7.5 7.5 0 0 1-1.5.9l-.3 1.5h-3l-.3-1.5a7.5 7.5 0 0 1-1.5-.9l-1.4.6-1.5-2.6 1.1-.9a7.5 7.5 0 0 1 0-1.8l-1.1-.9 1.5-2.6 1.4.6a7.5 7.5 0 0 1 1.5-.9l.3-1.5h3l.3 1.5a7.5 7.5 0 0 1 1.5.9l1.4-.6 1.5 2.6-1.1.9a7.5 7.5 0 0 1-.1 1.7z"/></svg>
-                        <span>Sistema</span><span class="side-chevron" aria-hidden="true">›</span>
-                    </span>
-                    <a href="{% url 'inicio' %}" class="side-link side-link-help active">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.6 9a2.5 2.5 0 1 1 4.3 1.8c-1.2 1-1.9 1.4-1.9 2.7M12 17h.01"/></svg>
-                        <span>Central de Ajuda</span>
-                    </a>
                 </div>
             </nav>
         </aside>
