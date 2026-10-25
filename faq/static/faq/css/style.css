@@ -208,22 +208,22 @@ main { flex: 1; }
     min-height: 48px;
     margin: 7px 25px 0 18px;
 }
-.page-toolbar-heading { display: flex; min-width: 0; align-items: center; gap: 14px; }
+.page-toolbar-heading { display: flex; min-width: 0; align-items: center; gap: 19px; }
 .page-toolbar-heading .content-header-title {
     overflow: hidden;
     max-width: min(720px, 55vw);
     margin: 0;
     color: #62636b;
-    font-size: 22px;
+    font-size: 28px;
     font-weight: 500;
     line-height: 1.2;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-.page-toolbar-divider { width: 1px; height: 27px; background: #d3d4d9; }
-.page-toolbar-breadcrumb { display: flex; align-items: center; gap: 10px; color: #72747f; font-size: 14px; }
+.page-toolbar-divider { width: 1px; height: 34px; background: #d3d4d9; }
+.page-toolbar-breadcrumb { display: flex; align-items: center; gap: 12px; color: #72747f; font-size: 18px; }
 .page-toolbar-breadcrumb a { display: inline-flex; align-items: center; color: #24bd6c; }
-.page-toolbar-breadcrumb svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.page-toolbar-breadcrumb svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .page-toolbar-breadcrumb a:not(:first-child) { color: var(--green-dark); }
 .page-toolbar-actions { display: flex; align-items: center; gap: 10px; }
 .page-action-chip {
