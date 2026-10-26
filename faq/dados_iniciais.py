@@ -5,6 +5,7 @@ CATEGORIAS = {
     "Checklist": "Perguntas que definem os valores da proposta.",
     "Itens, pacotes e serviços": "Template, pacotes, serviços adicionais e bonificações.",
     "Pagamento e envio": "Cobrança, validade e envio da proposta.",
+    "Serviços": "Cadastro e edição de serviços e pacotes.",
 }
 
 # (categoria, pergunta, resposta, passos, palavras_chave)
@@ -199,5 +200,23 @@ ARTIGOS = [
             "“Cancelar” fecha a tela e exclui a proposta.",
         ],
         "enviar proposta, salvar, salvar e fechar, cancelar, finalizar",
+    ),
+    (
+        "Serviços",
+        "Como editar o nome do pacote de serviços",
+        "A edição de pacotes fica em Administração > Serviços > Pacotes de Serviços. Abra o pacote desejado e altere o nome. As propostas já cadastradas com esse pacote não são alteradas; as mudanças valem somente para novas propostas.",
+        [
+            "No menu lateral, em Administração, clique em Serviços. No submenu, clique em Pacotes de Serviços.",
+            "Na tela “Cadastro de Pacote”, localize o pacote pela busca ou pelo filtro de status Ativo. A lista mostra Nome, Tipo de pacote, Competência, Valor do Pacote e Ação. Também há os botões “+ Novo” e “Remover”.",
+            "Clique na linha do pacote que deseja editar.",
+            "Na tela “Editar”, confira os dados: Pacote Ativo, Nome (obrigatório), Competência (obrigatória, no formato mês/ano), Tipo de pacote e Nível (obrigatório: Nível I - Básico, Nível II - Essencial ou Nível III - Avançado).",
+            "Em “Seleção de Serviços”, leia o aviso amarelo: adicionar ou remover serviços altera o valor total do pacote, mas não altera propostas já cadastradas; a mudança vale para novas propostas.",
+            "Use “Buscar serviço” ou o filtro “Serviços Selecionados” para localizar um serviço. Na tabela, marque ou desmarque os serviços desejados. As colunas são Nome, Benefício, Incluir no contrato e Valor; o Total do pacote aparece abaixo da tabela.",
+            "Para renomear o pacote, apague o nome atual e digite o novo. No vídeo, “Pacote Básico” é renomeado para “Start”.",
+            "Se desejar, role até “Descrição complementar” e informe detalhes do pacote que serão exibidos para quem receber a proposta.",
+            "Clique em “Salvar”, no canto inferior direito. Você voltará à lista com o nome atualizado. “Cancelar” descarta a edição.",
+            "No vídeo, o mesmo processo renomeia “Pacote Intermediário” para “Tecnológico” e “Plano Avançado” para “Ouro”. Ao final, a lista tem quatro itens: Ouro, Pacote de Serviços Administrativos, Start e Tecnológico.",
+        ],
+        "serviços, pacote de serviços, pacote, alterar nome, editar nome, renomear, cadastro de pacote",
     ),
 ]
