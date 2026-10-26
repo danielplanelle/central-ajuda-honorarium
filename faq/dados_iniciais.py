@@ -219,4 +219,20 @@ ARTIGOS = [
         ],
         "serviços, pacote de serviços, pacote, alterar nome, editar nome, renomear, cadastro de pacote",
     ),
+    (
+        "Serviços",
+        "Como reajustar os valores de um serviço",
+        "Na tela de edição do serviço, use “Reajuste de valores” para registrar valores por competência. A janela informa que as ações impactam diretamente o Cadastro de Pacote. Depois de aplicar o reajuste, salve o cadastro do serviço.",
+        [
+            "No menu lateral, em Administração, abra Serviços e clique em Serviços.",
+            "Localize o serviço que deseja editar e clique no ícone de lápis na coluna Ação.",
+            "Na aba Geral, confira os dados do serviço, como Nome, Departamento e Periodicidade. No vídeo, a periodicidade exibida é “Não recorrente”.",
+            "Role até “Valores atuais do serviço” e clique em “Reajuste de valores”.",
+            "Na janela “Reajuste de valores”, confira a Competência, selecione o Tipo do aumento e preencha os campos de valor correspondentes, como Valor RCC e Valor Total.",
+            "Antes de aplicar, observe o aviso de que as ações dessa tela impactam diretamente o Cadastro de Pacote. Clique em “Aplicar”.",
+            "Ao terminar, role até o final do cadastro e clique em “Salvar”. A lista de serviços será exibida novamente com a confirmação de que o registro foi alterado.",
+        ],
+        "serviços, cadastro de serviços, reajuste de valores, competência, valor RCC, valor total, periodicidade",
+        "videos/reajuste-valores-servico.mp4",
+    ),
 ]

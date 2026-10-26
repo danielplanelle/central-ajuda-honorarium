@@ -28,7 +28,9 @@ class Command(BaseCommand):
         criados = 0
         existentes = 0
 
-        for categoria, pergunta, resposta, passos, chaves in ARTIGOS:
+        for dados_artigo in ARTIGOS:
+            categoria, pergunta, resposta, passos, chaves = dados_artigo[:5]
+            video = dados_artigo[5] if len(dados_artigo) > 5 else ""
             passo_a_passo = "\n".join(
                 f"{i}. {texto}" for i, texto in enumerate(passos, start=1)
             )
@@ -39,6 +41,7 @@ class Command(BaseCommand):
                     "resposta": resposta,
                     "passo_a_passo": passo_a_passo,
                     "palavras_chave": chaves,
+                    "video": video,
                     "status": status,
                 },
             )
