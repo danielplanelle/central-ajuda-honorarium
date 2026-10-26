@@ -203,7 +203,7 @@ ARTIGOS = [
     ),
     (
         "Serviços",
-        "Como editar o nome do pacote de serviços",
+        "Como editar o nome do pacote de serviços?",
         "A edição de pacotes fica em Administração > Serviços > Pacotes de Serviços. Abra o pacote desejado e altere o nome. As propostas já cadastradas com esse pacote não são alteradas; as mudanças valem somente para novas propostas.",
         [
             "No menu lateral, em Administração, clique em Serviços. No submenu, clique em Pacotes de Serviços.",
@@ -218,6 +218,7 @@ ARTIGOS = [
             "No vídeo, o mesmo processo renomeia “Pacote Intermediário” para “Tecnológico” e “Plano Avançado” para “Ouro”. Ao final, a lista tem quatro itens: Ouro, Pacote de Serviços Administrativos, Start e Tecnológico.",
         ],
         "serviços, pacote de serviços, pacote, alterar nome, editar nome, renomear, cadastro de pacote",
+        "videos/Editar-Nome-Pacotes.mov",
     ),
     (
         "Serviços",
