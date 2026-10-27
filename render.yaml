@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: central-ajuda-honorarium
+    runtime: python
+    plan: free
+    region: ohio
+    branch: main
+    buildCommand: ./build.sh
+    startCommand: python manage.py migrate --noinput && python manage.py carregar_artigos --publicar && gunicorn config.wsgi:application
+    healthCheckPath: /
+    autoDeployTrigger: commit
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.4
+      - key: DEBUG
+        value: "False"
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
